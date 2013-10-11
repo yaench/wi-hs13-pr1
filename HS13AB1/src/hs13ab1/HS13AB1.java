@@ -20,16 +20,12 @@ public class HS13AB1 {
         * 
         * @param i          Hilfsvariable in FOR-Schleife
         * @param sSel       Ausgewaehlter Menuepunkt
-        * @param sPara3     Enthaelt Parameter fuer ParameterUebergabe.java
-        * @param sPara4     Enthaelt Parameter fuer ArithmetischesMittel.java
-        * @param sPara5     Enthaelt Parameter fuer Palindrom.java
+        * @param sPara     Enthaelt Parameter fuer Uebergabe
         * @param in         Input-objekt
         */
         
        String       sSel;
-       String[]     sPara3;
-       String[]     sPara4;
-       String[]     sPara5;
+       String[]     sPara;
        Scanner      in = new Scanner(System.in);
        
        System.out.println("Bitte waehlen Sie die gewuenschte Aufgabe und bestaetigen Sie mit Enter:"); 
@@ -39,6 +35,7 @@ public class HS13AB1 {
        System.out.printf("%-10s %-30s\n", "3", "C) Parameter Uebergabe");
        System.out.printf("%-10s %-30s\n", "4", "D) Arithmetisches Mittel");
        System.out.printf("%-10s %-30s\n", "5", "E) Palindrom");
+       System.out.printf("%-10s %-30s\n", "6", "F) Palindrom ohne Reverse-Funktion");
        System.out.print("Eingabe: ");
        
        // Reads a single line from the console 
@@ -57,20 +54,26 @@ public class HS13AB1 {
            case "3":
                // ParameterUebergabe.java
                System.out.println("Welche Parameter sollen an das Programm uebergeben werden?\nEingabe:");
-               sPara3 = in.nextLine().split("\\s"); 
-               hs13ab1.ParameterUebergabe.main(sPara3);
+               sPara = in.nextLine().split("\\s"); 
+               hs13ab1.ParameterUebergabe.main(sPara);
                break;
            case "4":
                // ArithmetischesMittel.java
                System.out.println("Welche Parameter sollen an das Programm uebergeben werden?\nEingabe:");
-               sPara4 = in.nextLine().split("\\s"); 
-               hs13ab1.ArithmetischesMittel.main(sPara4);
+               sPara = in.nextLine().split("\\s"); 
+               hs13ab1.ArithmetischesMittel.main(sPara);
                break;
            case "5":
                // Palindrom.java
                System.out.println("Welche Parameter sollen an das Programm uebergeben werden?\nEingabe:");
-               sPara5 = in.nextLine().split("\\s"); 
-               hs13ab1.Palindrom.main(sPara5);
+               sPara = in.nextLine().split("\\s"); 
+               hs13ab1.Palindrom.main(sPara);
+               break;
+           case "6":
+               // Palindrom.java
+               System.out.println("Welche Parameter sollen an das Programm uebergeben werden?\nEingabe:");
+               sPara = in.nextLine().split("\\s"); 
+               hs13ab1.Palindrom.sub(sPara);
                break;
            default:
                 // Ungueltige Eingabe
